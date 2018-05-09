@@ -5,5 +5,5 @@
 
 改动：修改每个item带图片显示
 
-######实现方法：SlidingTabLayout.showImg(position, resourceId);
+###### 实现方法：SlidingTabLayout.showImg(position, resourceId);
 
