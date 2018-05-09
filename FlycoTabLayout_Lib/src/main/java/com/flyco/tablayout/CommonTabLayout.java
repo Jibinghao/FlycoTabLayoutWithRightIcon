@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.flyco.tablayout.utils.FragmentChangeManager;
+import com.flyco.tablayout.utils.ShowIconUtils;
 import com.flyco.tablayout.utils.UnreadMsgUtils;
 import com.flyco.tablayout.widget.MsgView;
 
@@ -821,6 +822,27 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
             mInitSetMap.put(position, true);
         }
     }
+
+    /**
+     * 增加显示Icon的方法，通过showIcon可以在右侧显示Icon
+     *
+     * @param position 位置
+     * @param resourceId 资源id
+     */
+    public void showImg(int position, int resourceId) {
+        if (position >= mTabCount) {
+            position = mTabCount - 1;
+        }
+        View tabView = mTabsContainer.getChildAt(position);
+        ImageView ivRight = (ImageView) tabView.findViewById(R.id.iv_tab_right);
+        ivRight.setBackgroundResource(resourceId);
+        if (ivRight != null) {
+            ShowIconUtils.show(ivRight);
+        }
+    }
+
+
+
 
     /**
      * 显示未读红点
